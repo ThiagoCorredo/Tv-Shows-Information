@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+apply from: '../dependencies.gradle'
+
+android {
+    namespace 'com.tcorredo.tvshow'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.tcorredo.tvshow"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation generalDependencies.core
+    implementation generalDependencies.appCompat
+    implementation generalDependencies.material
+    implementation generalDependencies.retrofit
+    implementation generalDependencies.retrofitMoshi
+    implementation generalDependencies.loggingInterceptor
+    implementation generalDependencies.moshiKotlin
+    implementation generalDependencies.moshiAdapter
+    implementation generalDependencies.koin
+    implementation generalDependencies.coroutinesCore
+    implementation generalDependencies.coroutinesAndroid
+    implementation generalDependencies.coil
+    implementation generalDependencies.viewModelScope
+    implementation generalDependencies.lifecycleScope
+    implementation generalDependencies.navigationFragment
+    implementation generalDependencies.navigationUi
+    implementation generalDependencies.espressoIdling
+    implementation generalDependencies.paging3
+
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.coroutinesTest
+    testImplementation testDependencies.koinJunitTest
+    androidTestImplementation testDependencies.koinTest
+    androidTestImplementation testDependencies.mockkAndroid
+    androidTestImplementation testDependencies.androidJunit
+    androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.mockWebServer
+    androidTestImplementation testDependencies.coreKtx
+    androidTestImplementation testDependencies.testRunner
+}

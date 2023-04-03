@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TV Shows Information</string>
+
+    <string name="tv_shows">Tv Shows</string>
+    <string name="tv_shows_details">Tv Shows Details</string>
+    <string name="season_number">Season %1$d</string>
+    <string name="show_goes_on">The Show is on %1$s at %2$s</string>
+    <string name="series">Series</string>
+    <string name="actors">Actors</string>
+    <string name="search_series_question">Which series do you want to search?</string>
+    <string name="try_again">Try Again</string>
+</resources>

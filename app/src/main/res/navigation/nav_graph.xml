@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_tv_shows">
+
+    <fragment
+        android:id="@+id/nav_tv_shows"
+        android:name="com.tcorredo.tvshow.ui.tvshow_list.TvShowFragment"
+        android:label="@string/tv_shows"
+        tools:layout="@layout/fragment_tv_show">
+        <action
+            android:id="@+id/action_nav_tv_shows_to_nav_tv_shows_details"
+            app:destination="@id/nav_tv_shows_details">
+            <argument
+                android:name="tvShow"
+                app:argType="com.tcorredo.tvshow.data.domain.entity.TvShow" />
+        </action>
+    </fragment>
+
+    <activity
+        android:id="@+id/nav_tv_shows_details"
+        android:name="com.tcorredo.tvshow.ui.tvshow_details.TvShowDetailsActivity"
+        android:label="@string/tv_shows_details"
+        tools:layout="@layout/activity_tv_show_details" />
+
+    <fragment
+        android:id="@+id/nav_actors"
+        android:name="com.tcorredo.tvshow.ui.actor.ActorFragment"
+        android:label="@string/actors"
+        tools:layout="@layout/fragment_actor" />
+
+</navigation>
